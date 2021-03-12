@@ -1,0 +1,100 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+<!-- Masthead-->
+<div class="container-fluid d-flex align-items-center flex-column">
+    <div class="gcse-searchresults"></div>
+</div>
+
+<script async src="https://cse.google.com/cse.js?cx=005035030451304565641:e5z-hed350m"></script>
+
+
+<div class="gcse-searchbox"></div>
+
+
+
+
+
+
+<script>
+
+    function DoCSE(imageSearch) {
+
+        //alert(document.getElementById("generic-seach").value);
+
+        document.getElementsByName("search")[0].value = document.getElementById("generic-seach").value;
+
+        document.getElementsByClassName("gsc-search-button")[1].click()
+
+        //    document.getElementsByClassName("index-container")[0].className = "index-container-no-background";
+
+    }
+
+
+    const node = document.getElementById("generic-seach");
+    node.addEventListener('keyup', ({ key }) => {
+        if (key === "Enter") {
+            DoCSE();
+        }
+    });
+
+
+    const node_search_filter = document.getElementsByClassName("search-filter");
+
+    var determineSearchFilterAction = function () {
+
+
+        var attribute = this.getAttribute("id");
+        var el;
+
+
+        var filters = document.getElementsByClassName("search-filter");
+        for (var i = 0; i < filters.length; i++) {
+            filters[i].getElementsByTagName("span")[0].className = "";
+        }
+
+        if (attribute == 'search-filter-image') {
+
+                document.getElementsByClassName("gsc-control-wrapper-cse")[0].style.display = "none";
+
+            DoCSE();
+
+            setTimeout(function () {
+                document.getElementsByClassName("gsc-tabHeader")[1].click();
+                document.getElementsByClassName("gsc-control-wrapper-cse")[0].style.display = "block";
+            }, 3000);
+
+            //document.getElementsByClassName("search-filter")[0].getElementsByTagName("span")[0].className = "active";
+            this.getElementsByTagName("span")[0].className = "active";
+        }
+
+        if (attribute == 'search-filter-web') {
+            document.getElementsByClassName("gsc-control-wrapper-cse")[0].style.display = "block";
+            DoCSE();
+            this.getElementsByTagName("span")[0].className = "active";
+        }
+
+        if (attribute == 'search-filter-youtube') {
+            //document.getElementsByClassName("gsc-control-wrapper-cse")[0].style.display = "block";
+            //DoCSE();
+            this.getElementsByTagName("span")[0].className = "active";
+        }
+
+        if (attribute == 'search-filter-wikipedia') {
+            //document.getElementsByClassName("gsc-control-wrapper-cse")[0].style.display = "block";
+            //DoCSE();
+            this.getElementsByTagName("span")[0].className = "active";
+        }
+
+
+
+
+    };
+
+    for (var i = 0; i < node_search_filter.length; i++) {
+        node_search_filter[i].addEventListener('click', determineSearchFilterAction, false);
+    }
+
+</script>
