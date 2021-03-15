@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Treely - the best thing in life is trees</title>
+    <title>Forest404 - the best thing in life is trees</title>
 
     <!-- Favicon-->
     <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
@@ -39,9 +39,9 @@
     <nav id="sidebar-wrapper">
         <ul class="sidebar-nav">
             <li class="sidebar-brand">
-                <a class="js-scroll-trigger" href="#page-top">Start Bootstrap</a>
+                <a class="js-scroll-trigger" href="#page-top">Forest 404</a>
             </li>
-            <li class="sidebar-nav-item">
+            @*<li class="sidebar-nav-item">
                 <a class="js-scroll-trigger" href="#page-top">Home</a>
             </li>
             <li class="sidebar-nav-item">
@@ -55,7 +55,7 @@
             </li>
             <li class="sidebar-nav-item">
                 <a class="js-scroll-trigger" href="#contact">Contact</a>
-            </li>
+            </li>*@
         </ul>
     </nav>
 
@@ -64,7 +64,7 @@
         <div class="container-fluid">
 
             @*<a class="navbar-brand js-scroll-trigger" href="#page-top">Treely</a>*@
-            <h1 style="color:black" id="app-name">Treely</h1>
+            <h1 style="color:black" id="app-name">Forest 404</h1>
 
             <div class="input-group md-form form-sm form-2 pl-0" id="generic-search-wrapper">
                 <input class="form-control my-0 py-1 lime-border" type="text" placeholder="Search" aria-label="Search" id="generic-seach" autocomplete="off">
@@ -90,11 +90,11 @@
                     <span class=""><a href="/yelp">Yelp</a></span>
                 </div>
                 <div class="col-3 search-filter" id="search-filter-youtube">
-                    <span class="">YouTube</span>
+                    <span class=""><a href="/youtube">YouTube</a></span>
                 </div>
-                <div class="col-3 search-filter" id="search-filter-wikipedia">
+                @*<div class="col-3 search-filter" id="search-filter-wikipedia">
                     <span class="">Wikipedia</span>
-                </div>
+                </div>*@
             </div>
         </div>
     </nav>
@@ -195,28 +195,7 @@
             });
 
         })(jQuery); // End of use strict
-
-        // Disable Google Maps scrolling
-        // See http://stackoverflow.com/a/25904582/1607849
-        // Disable scroll zooming and bind back the click event
-        var onMapMouseleaveHandler = function (event) {
-            var that = $(this);
-            that.on('click', onMapClickHandler);
-            that.off('mouseleave', onMapMouseleaveHandler);
-            that.find('iframe').css("pointer-events", "none");
-        }
-        var onMapClickHandler = function (event) {
-            var that = $(this);
-            // Disable the click handler until the user leaves the map area
-            that.off('click', onMapClickHandler);
-            // Enable scrolling zoom
-            that.find('iframe').css("pointer-events", "auto");
-            // Handle the mouse leave event
-            that.on('mouseleave', onMapMouseleaveHandler);
-        }
-        // Enable map zooming with mouse scroll when the user clicks the map
-        $('.map').on('click', onMapClickHandler);
-
+       
     </script>
 
 </body>

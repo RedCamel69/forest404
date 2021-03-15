@@ -39,6 +39,12 @@ namespace forest404.Controllers
             return View();
         }
 
+        [Route("YouTube")]
+        public IActionResult YouTube()
+        {
+            return View();
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
